@@ -10,8 +10,12 @@
     <h1>Etch-A-Sketch</h1>
     <div class="content">
     <div class="buttons">
-        <button>Change number of sqares</button>
-        <br/><button>Change number of sqares</button>
+        <div class="box">
+            <label for="boardSize">Grid size</label>
+            <input type="range" id="boardSize" name="size" min="2" max="64" value="16"/>
+            <div class="value"></div>
+        </div>
+        <button id="boardSizeBtn">Apply</button>
         <br/><button>Change number of sqares</button>
     </div>
     <div class="board"></div>
