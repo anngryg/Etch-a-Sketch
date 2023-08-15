@@ -3,6 +3,7 @@
     --main-content-color: rgb(246, 246, 246);
     --second-content-color: rgb(246, 246, 246);
     --font-family: 'Courier New', monospace;
+    --cursor-brush: url('brush.svg'), auto;
 
 }
 
@@ -46,6 +47,7 @@ button{
     font-family: var(--font-family);
     border-radius: 10px;
     font-size: 100%;
+    cursor: pointer;
 }
 .box{
     display:flex;
@@ -65,6 +67,7 @@ button{
     display: grid;
     border: 3px solid rgba(255, 255, 255, 0.521);
     border-radius: 5px;
+    cursor: var(--cursor-brush);
 }
 
 .pen-color {
