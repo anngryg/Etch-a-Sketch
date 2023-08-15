@@ -1,8 +1,17 @@
+:root {
+    --main-bg-color: #353535;
+    --main-content-color: rgb(246, 246, 246);
+    --second-content-color: rgb(246, 246, 246);
+    --font-family: 'Courier New', monospace;
+
+}
+
 body {
-    background-color: rgb(54, 53, 53);
-    color: rgb(246, 246, 246);
+    background-color: var(--main-bg-color);
+    color: var(--main-content-color);
     text-align: center;
-    font-family: cursive;
+    font-family: var(--font-family);
+    font-size: 110%;
 }
 
 h1{
@@ -15,36 +24,38 @@ h1{
     width: 75vw;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .buttons{
+    height:500px;
     margin-left: auto;
     margin-right: auto; 
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }
 
 button{
-    background-color: pink;
+    margin-top: 10px;
+    background-color: var(--second-content-color);
     border: 0;
-    padding: 10px;
-    margin: 20px;
-    font-family: cursive;
+    padding: 10px 10px 10px 10px;
+    font-family: var(--font-family);
     border-radius: 10px;
+    font-size: 100%;
 }
 .box{
     display:flex;
     flex-direction: column;
-    padding: 10px;
     align-items: center;
 }
 
 .cells {
-    border: 1px solid rgba(255, 255, 255, 0.304);
-    border-radius: 2px;
+    border: 1px dashed rgba(255, 255, 255, 0.036);
 }
-
 
 .board {
     margin-left: auto;
@@ -56,6 +67,66 @@ button{
     border-radius: 5px;
 }
 
-#boardSize{
-   
+.pen-color {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pen-color > input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border:none;
+    width: 90px;
+    height: 90px;
+    cursor: pointer;
+}
+
+.pen-color > input::-webkit-color-swatch{
+    border-radius: 15px;
+    border:none;
+}
+
+.pen-color > input::moz-color-swatch{
+    border-radius: 15px;
+    border: none;
+}
+
+#rainbow-pen {
+    background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+    border: 0;
+    color: black;
+}
+
+#shadow-pen {
+    background-image: linear-gradient(90deg, #ffffff 0%, #b9b9b9 49%, #6b6b6b 80%, #060606 100%);
+    border: 0;
+    color: black;
+}
+
+@media (max-width: 900px){
+    .content{
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .buttons{
+        height: auto;
+        margin-left: auto;
+        margin-right: auto; 
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap:10px;
+    }
+    .pen-color>input{
+        margin: 20px;
+    }
+
 }

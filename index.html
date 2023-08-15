@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Etch-a-sketch</title>
+    <title>Etch-A-Sketch</title>
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
@@ -13,10 +13,19 @@
         <div class="box">
             <label for="boardSize">Grid size</label>
             <input type="range" id="boardSize" name="size" min="2" max="64" value="16"/>
-            <div class="value"></div>
+            <div class="value">16</div>
+            <button id="boardSizeBtn" onclick="chooseColor('reset')">Apply</button>
         </div>
-        <button id="boardSizeBtn">Apply</button>
-        <br/><button>Change number of sqares</button>
+        <div class="pen-color">
+            <p>Choose your pen color</p>
+            <input type="color" id="pen" name="pen" value="#ffc0cb" color="random" oninput="chooseColor('myColor')">
+        </div>
+        <div>
+            <button id="rainbow-pen" onclick="chooseColor('random')">Paint a rainbow</button>
+        </div>
+        <div>
+            <button id= "eraser"onclick="chooseColor('eraser')">Eraser</button>
+        </div>
     </div>
     <div class="board"></div>
     </div>
